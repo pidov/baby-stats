@@ -1,18 +1,30 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
-import './Header.scss'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap'
 
 export const Header = () => (
-  <div>
-    <h1>React Redux Starter Kit</h1>
-    <IndexLink to='/' activeClassName='route--active'>
-      Home
-    </IndexLink>
-    {' · '}
-    <Link to='/counter' activeClassName='route--active'>
-      Counter
-    </Link>
-  </div>
+  <Navbar inverse collapseOnSelect>
+    <Navbar.Header>
+      <Navbar.Brand>
+        <a href='#'>React-Bootstrap</a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav>
+        <IndexLinkContainer to='/' >
+          <NavItem>
+            Home
+          </NavItem>
+        </IndexLinkContainer>
+        <LinkContainer to='/counter' >
+          <NavItem>
+            Counter
+          </NavItem>
+        </LinkContainer>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
 )
 
 export default Header
